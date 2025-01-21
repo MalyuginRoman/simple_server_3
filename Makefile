@@ -3,7 +3,8 @@ all:
 	g++ -std=c++17 client.c -o client
 	g++ -std=c++17 test_server.cpp -lcppunit -o test_server
 test:
-	chmod +x server
+	chmod +x
+	./server
 	./client
 	./test_server
 clean:
