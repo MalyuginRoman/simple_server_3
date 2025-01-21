@@ -43,22 +43,22 @@ protected:
       ipOfServer.sin_port = htons(2017);
       ipOfServer.sin_addr.s_addr = inet_addr("127.0.0.1");
       if(connect(CreateSocket, (struct sockaddr *)&ipOfServer, sizeof(ipOfServer))<0)
-      {
           printf("Connection failed due to port and ip problems\n");
-      }
-      while((n = read(CreateSocket, dataReceived, sizeof(dataReceived)-1)) > 0)
-      {
-          dataReceived[n] = 0;
-          if(fputs(dataReceived, stdout) == EOF)
-          {
-              printf("\nStandard output error");
-          }
-          printf("\n");
-      }
-      if( n < 0)
-      {
-          printf("Standard input error \n");
-      }
+      else
+          printf("Connection is good\n");
+      //while((n = read(CreateSocket, dataReceived, sizeof(dataReceived)-1)) > 0)
+      //{
+      //    dataReceived[n] = 0;
+      //    if(fputs(dataReceived, stdout) == EOF)
+      //    {
+      //        printf("\nStandard output error");
+      //    }
+      //    printf("\n");
+      //}
+      //if( n < 0)
+      //{
+      //    printf("Standard input error \n");
+      //}
     }
 };
 
