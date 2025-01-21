@@ -33,16 +33,15 @@ int main()
         return 1;
     }
 
-    while((n = read(CreateSocket, dataReceived, sizeof(dataReceived)-1)) > 0)
-    {
-        dataReceived[n] = 0;
-        if(fputs(dataReceived, stdout) == EOF)
-        {
-            printf("\nStandard output error");
-        }
-
-        printf("\n");
-    }
+    //while((n = read(CreateSocket, dataReceived, sizeof(dataReceived)-1)) > 0)
+    //{
+    //    dataReceived[n] = 0;
+    //    if(fputs(dataReceived, stdout) == EOF)
+    //    {
+    //        printf("\nStandard output error");
+    //    }
+    //    printf("\n");
+    //}
 
     if( n < 0)
     {
