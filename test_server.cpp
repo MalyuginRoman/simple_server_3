@@ -38,7 +38,6 @@ protected:
       if((CreateSocket = socket(AF_INET, SOCK_STREAM, 0))< 0)
       {
           printf("Socket not created \n");
-          return 1;
       }
       ipOfServer.sin_family = AF_INET;
       ipOfServer.sin_port = htons(2017);
@@ -46,7 +45,6 @@ protected:
       if(connect(CreateSocket, (struct sockaddr *)&ipOfServer, sizeof(ipOfServer))<0)
       {
           printf("Connection failed due to port and ip problems\n");
-          return 1;
       }
       while((n = read(CreateSocket, dataReceived, sizeof(dataReceived)-1)) > 0)
       {
